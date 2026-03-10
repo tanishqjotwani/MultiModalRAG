@@ -1,7 +1,8 @@
-# MultiModal-RAG
+# MultiModalRAG – Multimodal RAG Chatbot for Research Papers
 
-# Overview: 
-With the growing number of research papers being published it is becoming more and more important to continue reading and understnading them to understand the AI landscape. The following project aims to reduce the gap between the research paper and an engineering undergrad. The following project outlines two approaches to build a chatbot to have a conversation with a chatbot about a research paper(Attention is all you need in this case). Since research paper consists of unstructured data in the form of tables,images and texts it becomes increasing difficult to extract each bit of information.
+**Chat with research papers like a human – understand text, images, tables, and figures together.**
+
+MultiModalRAG is a local-first multimodal Retrieval-Augmented Generation (RAG) system that lets you ask natural questions about research papers (e.g., "Attention is All You Need") and get grounded answers from both text **and visual content** (diagrams, tables, figures).
 
 ## Approach 1: in MM-RAG
 <img width="850" height="431" alt="image" src="https://github.com/user-attachments/assets/10c39482-64b2-4c60-b225-4b06c49df0e4" />
@@ -10,7 +11,16 @@ With the growing number of research papers being published it is becoming more a
 
 
 ## Approach 2: in Multimodal-RAG 
-the following approach utillisees CLIP and an ensemble retriever using Similarity search and MMR(rereanker)
+Advanced Approach with CLIP + Ensemble Retriever using Similarity search and MMR(rereanker)
 
 <img width="1536" height="1024" alt="ChatGPT Image Aug 17, 2025, 07_25_28 PM" src="https://github.com/user-attachments/assets/7cbd9cc4-aa9b-45cf-ad4c-9b2ca84b7d83" />
 
+# Features
+
+- Multimodal RAG pipeline using **LangChain** – handles text + embedded images/tables from PDFs.
+- Two approaches:
+  - **Approach 1** (`MM_RAG.ipynb`): Simple multimodal ingestion and retrieval.
+  - **Approach 2** (`Multimodal_rag.ipynb`): Advanced ensemble retriever with CLIP embeddings + MMR re-ranking for better visual relevance.
+- Local execution – no cloud API needed (use Ollama, local embeddings, etc.).
+- Grounded Q&A – answers cite exact text passages **and** describe relevant figures/tables.
+- Easy to extend: Swap LLMs, add more papers, improve chunking/visual extraction.
